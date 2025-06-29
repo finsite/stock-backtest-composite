@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stock-backtest-composite
+  labels:
+    app: stock-backtest-composite
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stock-backtest-composite
+  template:
+    metadata:
+      labels:
+        app: stock-backtest-composite
+    spec:
+      containers:
+      - name: stock-backtest-composite
+        image: stock-backtest-composite:latest
+        ports:
+        - containerPort: 8080

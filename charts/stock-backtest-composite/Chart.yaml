@@ -1,0 +1,7 @@
+---
+apiVersion: v2
+name: stock-backtest-composite
+description: A Helm chart for stock-backtest-composite
+type: application
+version: 0.1.0
+appVersion: "1.0"
