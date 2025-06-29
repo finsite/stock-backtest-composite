@@ -7,6 +7,12 @@
 - Initial project structure cloned from `template_python`
 - Custom configuration and module setup for `stock-backtest-composite`
 
+## v0.3.0 (2025-06-29)
+
+### Feat
+
+- remove scripts directory from new repositories
+
 ## v0.2.0 (2025-06-29)
 
 ### Feat
