@@ -16,7 +16,7 @@ spec:
         app: stock-backtest-composite
     spec:
       containers:
-      - name: stock-backtest-composite
-        image: stock-backtest-composite:latest
-        ports:
-        - containerPort: 8080
+        - name: stock-backtest-composite
+          image: stock-backtest-composite:latest
+          ports:
+            - containerPort: 8080
