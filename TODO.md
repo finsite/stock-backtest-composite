@@ -7,7 +7,8 @@ This file tracks remaining enhancements and cleanup tasks for this repository.
 - [x] Enforce structured configuration via `config.py`
 - [x] Add Vault-based secret handling
 - [x] Add retryable message and output logic
-- [x] Validate presence of `get_polling_interval()`, `get_output_mode()`, `get_rabbitmq_queue()`
+- [x] Validate presence of `get_polling_interval()`, `get_output_mode()`,
+      `get_rabbitmq_queue()`
 
 ## 🔁 Retry Logic
 

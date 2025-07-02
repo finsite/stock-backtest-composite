@@ -1,6 +1,8 @@
 # Stock Backtest Repository
 
-This repository implements a production-ready backtesting module used to simulate trading strategies on historical stock data. It is part of the larger stock data ecosystem and supports:
+This repository implements a production-ready backtesting module used to
+simulate trading strategies on historical stock data. It is part of the larger
+stock data ecosystem and supports:
 
 - Clean integration with RabbitMQ for message input/output
 - Pluggable strategy logic for signal generation and execution
