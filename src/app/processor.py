@@ -1,5 +1,4 @@
-"""
-Processor module for stock-backtest-composite signal generation.
+"""Processor module for stock-backtest-composite signal generation.
 
 Validates incoming messages and synthesizes a composite signal
 based on multiple individual signals (e.g., alpha, beta, momentum).
@@ -15,8 +14,7 @@ logger = setup_logger(__name__)
 
 
 def validate_input_message(message: dict[str, Any]) -> ValidatedMessage:
-    """
-    Validate the incoming raw message against the expected schema.
+    """Validate the incoming raw message against the expected schema.
 
     Args:
         message (dict[str, Any]): The raw message payload.
@@ -26,6 +24,7 @@ def validate_input_message(message: dict[str, Any]) -> ValidatedMessage:
 
     Raises:
         ValueError: If the message format is invalid.
+
     """
     logger.debug("🔍 Validating message schema...")
     if not validate_message_schema(message):
@@ -35,8 +34,7 @@ def validate_input_message(message: dict[str, Any]) -> ValidatedMessage:
 
 
 def compute_composite_signal(message: ValidatedMessage) -> dict[str, Any]:
-    """
-    Compute a composite signal by aggregating available signals.
+    """Compute a composite signal by aggregating available signals.
 
     This example uses simple voting logic across multiple sub-signals.
 
@@ -45,6 +43,7 @@ def compute_composite_signal(message: ValidatedMessage) -> dict[str, Any]:
 
     Returns:
         dict[str, Any]: The enriched message with a composite signal.
+
     """
     symbol = message.get("symbol", "UNKNOWN")
     logger.info("🧠 Computing composite signal for %s", symbol)
@@ -57,8 +56,7 @@ def compute_composite_signal(message: ValidatedMessage) -> dict[str, Any]:
     }
 
     vote_count = sum(
-        1 for vote in signal_votes.values()
-        if vote in ("BUY", "INCLUDE", "OVEREXPOSED")
+        1 for vote in signal_votes.values() if vote in ("BUY", "INCLUDE", "OVEREXPOSED")
     )
 
     composite_signal = "BUY" if vote_count >= 2 else "HOLD"
